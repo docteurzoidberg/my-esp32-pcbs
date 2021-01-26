@@ -1,6 +1,11 @@
 # espbreakout
 
-For esp32 38pin breakout board like azdelivery ones*
+Breakout board for 38 pins esp32.
+
+## ESP32 versions
+
+- I worked with az-delivery esp32 boards.  
+**links**
 
 ## Pictures
 
@@ -8,50 +13,50 @@ For esp32 38pin breakout board like azdelivery ones*
 
 ## Features
 
-- 6 * phoenix 3.81mm pitch, 3pin connectors for gpios
-- jst-ph 2mm style 5pin connector for i2c (providing both 3.3 and 5v power)
-- jst-ph 2mm style 5pin connector for serial
-- 3 smd leds
-- global GND among all connectors
-- choosable 3 or 5v power (+) pin for each connector
+- 6 Phoenix connectors (3 pins, 3.81mm pitch) to use with prewired GPIOS or custom ones
+- choosable power (3 or 5V) for each Phoenix connector
+- JST-PH 2mm style 5 pins connector for I2C (providing both 3.3 and 5V power)
+- JST-PH 2mm style 5 pins connector for SERIAL
+- 3 SMD LEDs to use with prewired configuration or custom GPIOs
+- global board GND among all connectors
 
-## Power
+## Power distribution
 
-- each phoenix connector got a + pin that can be either tied to 3v or5v rail depending on the solder jumper configuration next to it
+- Each phoenix connector got a (+) pin that can be either tied to 3v or 5v rail. The desired voltage can be connected to the phoenix connector through a solder jumper.
 
-- each phoenix connector got common gnd pin
+- Each phoenix connector got a GND pin linked to global board GND.
 
-## Leds
+## LEDs
 
-each led have a solder jumper, and a resistor next to it.
+3 SMD LEDs placeholders are included, you are free to use them.
+Each LED have a solder jumper, and a resistor placeholder next to it.
 
-- LED1 is tied to the 5v rail if solder jumper is closed
+- LED1 can be tied to 5V rail through solder jumper.
 
-- LED2 is tied to GPIO32 if solder jumper is closed
+- LED2 can be tied to GPIO32 through solder jumper.
 
-- LED3 is tied to GPIO4 is solder jumper is closed
+- LED3 can be tied to GPIO4 through solder jumper.
 
-beware of choosing the right resistor for either 5v power or 3v gpios depending on your solder jumper setup !
+Please, beware of choosing the right resistor for either 5V or 3V power GPIOs, depending on your solder jumper setup!
 
 ## Data
 
-- J1 data pin is tied to (actually nothing. needs to be fixed...) when solder jumper closed
+- J1 data pin can be tied (actually nothing. needs to be fixed...) when solder jumper closed
 
-- J2 data pin is tied to GPIO25 when solder jumper closed
+- J2 data pin can be tied to GPIO25 through solder jumper.
 
-- J3 data pin is tied to GPIO5 when solder jumper closed
+- J3 data pin can be tied to GPIO5 through solder jumper.
 
-- J4 data pin is tied to GPIO26 when solder jumper closed
+- J4 data pin can be tied to GPIO26 through solder jumper.
 
-- J5 data pin is tied to GPIO33 when solder jumper closed
+- J5 data pin can be tied to GPIO33 through solder jumper.
 
-- J6 data pin is tied to GPIO32* when solder jumper closed
+- J6 data pin can be tied to GPIO32* through solder jumper.
 
-/!\ J6 data pin, when his solder jumper is closed, and the led3 solder jumper closed, are tied on the same pin (GPIO32). that's intended.
+*J6 data pin and LED2 can be tied on the same pin (GPIO32). This is expected behavior.  
+I'm using this output for a relay and the led reflects its status.
 
-I'm using this output for a relay, so the led reflect the status of the relay
-
-When no solder jumper is closed for a data pin, you are free to tied it to any pin on the esp, with a wire to the pad next the esp's pin.
+When the solder jumper of a data pin is not connected, you are free to tied it to any pin on the esp. A simple wire to the pad next to the ESP's pin does the job.
 
 //todo pictures of custom pin mapping
 
