@@ -1,11 +1,15 @@
 # my-esp32-pcbs
-my esp32 not project related pcbs
-## espbreakout
+This repository regroups all of my custom esp32 pcbs. These pcbs are meant to be generic and usable in a large panel of projects.
+## espBreakout
 
-A 38 pin esp32 breakout board with configurable power distribution an pin assignment with six phoenix-style connectors for i/o
+Breakout board for 38 pins esp32.
+- Configurable power distribution (3.3V/5V)
+- 6 phoenix-style connectors for i/o  
 Last revision: v1.1
 
-## espbreakout-adc-module
+## espBreakout-adc-module
 
-An i2c extension for the espbreakout onboarding 2* 4 channels adc (ax) with height phoenix-style connectors for inputs
+I2C extension for the espBreakout
+- 2x 4 channels adc (ax)
+- 8 phoenix-style connectors for i/o
 Last revision: WIP
